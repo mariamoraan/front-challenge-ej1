@@ -1,15 +1,23 @@
 <html>
     <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin ></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Button Component</title>
+    <link rel=”stylesheet” type=”text/css” href=”style.css”>
     </head>
     <body>
         <div id="react-page"></div>
         <script type="text/babel">
             var $app = document.getElementById('react-page');
-            ReactDOM.render($app);
+            function Button(props){
+                return (
+                    <button>{props.text}</button>
+                );
+            }
+            ReactDOM.render(<Button text="Button"/>,$app);
         </script>
     </body>
 </html>
