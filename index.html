@@ -2,22 +2,79 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <!-- https://material.io/resources/icons/?style=baseline -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+        rel="stylesheet">
+    <!-- https://material.io/resources/icons/?style=outline -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
+        rel="stylesheet">
+    <!-- https://material.io/resources/icons/?style=round -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+        rel="stylesheet">
+    <!-- https://material.io/resources/icons/?style=sharp -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp"
+        rel="stylesheet">
+    <!-- https://material.io/resources/icons/?style=twotone -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone"
+        rel="stylesheet">
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin ></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>Button Component</title>
-    <link rel=”stylesheet” type=”text/css” href=”style.css”>
     </head>
     <body>
         <div id="react-page"></div>
         <script type="text/babel">
             var $app = document.getElementById('react-page');
             function Button(props){
+                var text = props.text ? props.text : "Button";
+                var buttonType = props.type? props.type : '' ;
+                var buttonType = props.color? buttonType+= ' ' + props.color : buttonType ;
+                var buttonType = props.disableshadow? buttonType+= ' ' + 'noshadow' : buttonType ;
+                var buttonType = props.disabled? buttonType=' disabled' : buttonType ;
+                var buttonType = props.size? buttonType+= ' ' + props.size : buttonType ;
                 return (
-                    <button>{props.text}</button>
+                    <div>
+                        <button className={buttonType}>
+                            {props.starticon ? <span className="material-icons span-start">{props.starticon}</span> : ''}
+                            {text}
+                            {props.endicon ? <span className="material-icons span-end">{props.endicon}</span> : ''}
+                        </button>
+                    </div>
                 );
             }
-            ReactDOM.render(<Button text="Button"/>,$app);
+            ReactDOM.render(
+                <div id="render-div">
+                    
+                    <Button />
+                    <Button type="outline"/>
+                    <Button type="text"/>
+                    
+
+                   
+                    <Button disabled/>
+                    <Button disableshadow/>
+                    
+
+                    
+                    <Button starticon="favorite_border"/>
+                    <Button endicon="account_circle"/>
+                    
+                    
+                    
+                    <Button size="sm"/>
+                    <Button size="md"/>
+                    <Button size="lg"/>
+                    
+
+                    
+                    <Button color="danger"/>
+                    <Button color="warning"/>
+                    <Button color="secondary"/>
+                    
+                </div>
+            ,$app);
         </script>
     </body>
 </html>

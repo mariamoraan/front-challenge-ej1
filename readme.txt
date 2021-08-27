@@ -14,3 +14,11 @@ User story: When I hover or focus, I can see visual indicators
 User story: I can still access all button attributes
 User story (optional): Show button in a similar way like the design or use Storybook. Otherwise, showing the button in multiple states is enough
 Icon: https://google.github.io/material-design-icons/
+
+Types: outline / text
+To disable box-shadow: disableshadow
+To disable button: disabled
+To put an icon on the left: starticon="name_of_google_icon" Example: starticon="favorite_border"
+To put an icon on the right: endicon="name_of_google_icon" Example: endicon="favorite_border"
+Sizes: size="[sm/md/lg]"
+Colors: color="[danger/warning/secondary]"

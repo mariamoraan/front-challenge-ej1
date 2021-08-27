@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root{
+    --primary-color: hsl(0, 0%, 100%);
+    --secondary-color: hsl(267, 93%, 71%);
+    --tertiary-color: hsl(225, 13%, 81%);
+
+    --primary-color-darker: hsl(0, 0%, 81%);
+    --secondary-color-darker: hsl(267, 93%, 61%);
+    --tertiary-color-darker: hsl(225, 13%, 61%);
+
+    --primary-color-lighter: hsl(0, 0%, 100%);
+    --secondary-color-lighter: hsl(267, 93%, 91%);
+    --tertiary-color-lighter: hsl(225, 13%, 91%);
+
+    --secondary-color-opacity: rgb(174, 112, 250, 0.22);
+    --shadow-color: rgb(174, 112, 250, 0.22);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#render-div{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+#react-page{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.button-and-text{
+    text-align: center;
+}
+button{
+    margin: 20px;
+    outline: none;
+    border: none;
+    padding: 10px 25px;
+    background: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-color) 1.95px 3.95px 2.6px;
+    
+}
+.noshadow{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.noshadow:hover{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+button .span-start{
+    margin-right: 5px;
+}
+button .span-end{
+    margin-left: 5px;
+}
+.outline{
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.text{
+    background: none;
+    color: var(--secondary-color);
+    border-color: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;   
+}
+
+button:hover{
+    cursor: pointer;
+    background: var(--secondary-color-darker);
+    box-shadow: rgba(60, 64, 67, 0.4) 0px 1px 2px 0px, rgba(60, 64, 67, 0.25) 0px 1px 3px 1px;
+}
+button:focus{
+    font-weight: bolder;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+button:focus span{
+    animation-name: icon-animation;
+    animation-duration: 700ms;
+    animation-timing-function: ease-in-out;
+}
+@keyframes icon-animation {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.outline:hover{
+    background: var(--secondary-color-lighter);
+    color: var(--secondary-color-darker);
+}
+.text:hover{
+    background: none;
+    color: var(--secondary-color-darker);
+    box-shadow: none;
+}
+.text:focus{
+    border:none;
+    color: var(--secondary-color-darker);
+}
+
+.disabled{
+    background: var(--tertiary-color-lighter);
+    color: var(--tertiary-color-darker);
+}
+.disabled:hover{
+    cursor: not-allowed;
+    background: var(--tertiary-color-lighter);
+    color: var(--tertiary-color-darker);
+    box-shadow: var(--shadow-color) 1.95px 3.95px 2.6px;
+
+}
+.disabled:focus{
+    font-weight: normal;
+    border-color: var(--primary-color);
+}
+.danger{
+    --secondary-color:hsl(5, 67%, 45%);
+    --secondary-color-darker:hsl(5, 67%, 35%);
+    --secondary-color-lighter:hsl(5, 67%, 65%); 
+    --secondary-color-opacity: rgb(192, 51, 38, 0.22);
+}
+.warning{
+    --secondary-color: hsl(51, 100%, 51%);
+    --secondary-color-darker:hsl(51, 100%, 48%);
+    --secondary-color-lighter:hsl(51, 100%, 81%);
+    --secondary-color-opacity: rgb(255, 235, 107, 0.22);
+}
+.secondary{
+    --secondary-color:hsl(238, 73%, 63%);
+    --secondary-color-darker:hsl(238, 73%, 53%);
+    --secondary-color-lighter:hsl(238, 73%, 73%);
+    --secondary-color-opacity: rgb(92, 96, 230, 0.22);
+}
+
+.lg{
+    padding: 20px 45px;
+    font-size: 22px;
+}
+.md{
+    padding: 10px 25px;
+    font-size: 20px;
+}
+.sm{
+    padding: 5px 15px;
+    font-size: 18px;
+}
+
+#render-div Button{
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+}
