@@ -44,8 +44,9 @@
                     </div>
                 );
             }
-            ReactDOM.render(
-                <div id="render-div">
+            function Layout(){
+                return(
+                    <div id="render-div">
                     
                     <Button />
                     <Button type="outline"/>
@@ -74,6 +75,10 @@
                     <Button color="secondary"/>
                     
                 </div>
+                );
+            }
+            ReactDOM.render(
+                <Layout />
             ,$app);
         </script>
     </body>
